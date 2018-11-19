@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars </h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- NASA Mars News -->
+    <div class="row">
+
+      <div class="col-md-12">
+        <h2 class="news">Latest Mars News</h2>
+        <h4 class="heading">{{mars_data.news_title}}</h4>
+        <p>{{mars_data.news_p}}</p>
+      </div>
+
+      <!-- JPL Mars Space Images -->
+      <div class="col-md-8">
+        <h2 class="featured-image">Featured Mars Image</h2>
+        <img src= {{ mars_data.featured_image_url }} width="75%">
+      </div>
+
+      <!-- Mars Weather -->
+      <div class="col-md-4">
+        <div class="panel panel-default">
+          <div class="panel-body weather">
+            <h4>Current Weather on Mars</h4>
+            {{ mars_data.weather }}
+          </div>
+        </div>
+
+      <!-- Mars Facts -->
+        <h4>Mars Facts</h4>
+        
+        </div>
+    </div>
+    <br>
+    
+    <!-- Mars Hemispheres -->
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <h4 style="text-align: center;">Mars Hemispheres</h4>
+      <hr>
+
+   <div class="row">
+
+      <div class="col-md-6">
+        <div class="panel panel-default">
+        <div class="panel-header">
+            <img src = {{ mars_data.hemisphere_image_urls[0].url_img}} width="100%">
+        </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="panel panel-default">
+          <div class="panel-header">
+              <img src = {{ mars_data.hemisphere_image_urls[1].url_img}} width="100%">
+          </div>
+          </div>
+        </div>
+
+      <div class="col-md-6">
+          <div class="panel panel-default">
+          <div class="panel-header">
+              <img src = {{ mars_data.hemisphere_image_urls[2].url_img}} width="100%">
+          </div>
+          </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="panel panel-default">
+        <div class="panel-header">
+           <img src = {{ mars_data.hemisphere_image_urls[3].url_img}} width="100%">
+        </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+  </div>
+
+</body>
+</html>
